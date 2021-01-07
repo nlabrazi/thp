@@ -1,4 +1,4 @@
-# Projet THP : JS-DOM !
+# Projet THP-NEXT : RPG-GAME (JS) !
 
 By Nabil Simon
 
