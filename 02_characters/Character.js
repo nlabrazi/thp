@@ -1,10 +1,11 @@
 /* ######################   Character   ########################## */
 
 class Character {
-  constructor(hp, dmg, mana, status = 'playing', spell) {
+  constructor(hp, dmg, mana, character, status = 'playing', spell) {
     this.hp = hp;
     this.dmg = dmg;
     this.mana = mana;
+    this.character = character;
     this.status = status;
     this.spell = spell;
   }

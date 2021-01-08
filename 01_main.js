@@ -11,11 +11,21 @@ const Moanna = new Monk('Moanna');
 const Draven = new Berzerker('Draven');
 const Carl = new Assassin('Carl');
 
-console.log("******************");
-console.log("**              **");
-console.log("** debut du jeu **");
-console.log("**              **");
-console.log("******************");
+console.log("************************************************************************");
+console.log("**                                                                    **");
+console.log("** ██████╗ ██████╗  ██████╗      ██████╗  █████╗ ███╗   ███╗███████╗  **");
+console.log("** ██╔══██╗██╔══██╗██╔════╝     ██╔════╝ ██╔══██╗████╗ ████║██╔════╝  **");
+console.log("** ██████╔╝██████╔╝██║  ███╗    ██║  ███╗███████║██╔████╔██║█████╗    **");
+console.log("** ██╔══██╗██╔═══╝ ██║   ██║    ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝    **");
+console.log("** ██║  ██║██║     ╚██████╔╝    ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗  **");
+console.log("** ╚═╝  ╚═╝╚═╝      ╚═════╝      ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝  **");
+console.log("**                                                                    **");
+console.log("**                            Created By                              **");
+console.log("**                                                                    **");
+console.log("**                           Nabil & Simon                            **");
+console.log("**                                                                    **");
+console.log("************************************************************************");
+console.log("");
 
 let heroes = [Grace, Ulder, Moanna, Draven, Carl];
 
