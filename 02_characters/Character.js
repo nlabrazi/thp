@@ -42,7 +42,7 @@ class Character {
       this.status = "loser";
     }
   }
-  isAlive(){
+  checkIsAlive(){
     this.checkStatus();
     return this.status == "playing";
   }

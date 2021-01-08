@@ -1,5 +1,5 @@
 const shuffleArray = require ('./03_setup/shuffleArray');
-const getPlayerMaxHp = require ('./03_setup/getPlayerMaxHp');
+const checkPlayerMaxHp = require ('./03_setup/checkPlayerMaxHp');
 
 
 /* ######################   GAME   ########################## */
@@ -15,8 +15,8 @@ class Game {
     this.turnLeft -= 1;
   }
 
-  watchStats() {
-    this.updatePlayers();
+  checkStats() {
+    this.checkPlayers();
     console.log("Liste des joueurs :");
     console.log("............................................");
     this.players.forEach((player, index) => {
@@ -33,38 +33,41 @@ class Game {
 
   startGame() {
     for (let i = 1; i <= 11; i++) {
-      if (this.isEndGame()) {
+      if (this.checkEndGame()) {
         return;
       }
       this.startTurn(i);
     }
   }
-  updatePlayers() {
-    if (this.isEndGame()) return;
+  checkPlayers() {
+    if (this.checkEndGame()) return;
     this.players = this.players.filter((x) => x.hp > 0);
   }
 
-  isEndGame() {
+  checkEndGame() {
     return this.status != 'onPlaying';
   }
 
-  getWinner(player) {
+  checkWinner(player) {
     if (player) {
       player.setWinner();
-      console.log("**********");
-      console.log(`Le gagnant est : ${player.name}`);
-      console.log("**********");
+      console.log("******************************");
+      console.log("**                          **");
+      console.log(`** Le gagnant est : ${player.name} **`);
+      console.log("**                          **");
+      console.log("******************************");
     }
   }
   checkGame() {
-    this.updatePlayers();
+    this.checkPlayers();
     if (this.turnLeft < 1 || this.players.length < 2) {
-      const winner = getPlayerMaxHp(this.players);
+      const winner = checkPlayerMaxHp(this.players);
       this.status = 'endGame';
-      this.isEndGame();
+      this.checkEndGame();
+      console.log("");
       console.log('Fin de la partie');
-
-      this.getWinner(winner);
+      console.log("");
+      this.checkWinner(winner);
       return;
     }
   }
@@ -72,9 +75,9 @@ class Game {
   /* ######################   BOUCLE DU JEU   ########################## */
 
   startTurn(num, players = this.players) {
-    this.updatePlayers();
+    this.checkPlayers();
     this.checkGame();
-    if (this.isEndGame()) return;
+    if (this.checkEndGame()) return;
     console.log(`Tour numéro ${num} :`);
     console.log("------------------");
     let newAction = shuffleArray(players);
@@ -84,7 +87,7 @@ class Game {
       this.attackPlayers(attacker, target);
       newAction = newAction.filter((x) => x.hp > 0);
     }
-    this.watchStats();
+    this.checkStats();
     this.turnLessOne();
   }
 
@@ -92,7 +95,7 @@ class Game {
   /* ######################   ATTAQUE JOUEURS   ########################## */
 
   attackPlayers(attacker, enemy) {
-    console.log(`C'est l'heure du dududueeel: ${attacker.name} attaque`);
+    console.log(`C'est l'heure du combat: ${attacker.name} attaque`);
     let attackDmg = 0;
     attacker.dealDamage(enemy);
     attackDmg = attacker.dmg;
@@ -101,10 +104,10 @@ class Game {
       Il fait ${attackDmg} damages.`
       );
 
-    if (enemy.isAlive()) {
+    if (enemy.checkIsAlive()) {
       console.log(`      ${enemy.name} a ${attackDmg} HP restant.`);
     } else {
-      console.log(`      ${enemy.name} mort.`);
+      console.log(`      ${enemy.name} est mort.`);
     }
   }
 
