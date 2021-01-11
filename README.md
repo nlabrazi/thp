@@ -1,4 +1,5 @@
-# Projet THP-NEXT : RPG-GAME (JS) !
+# Projet THP-NEXT : WEEK 2 --- DAY 1
+# RECURSIVITE !
 
 By Nabil Simon
 
