@@ -195,8 +195,8 @@ console.log("**********************");
 console.log("");
 
 console.log("Size tree: " + bst.size());
-console.log("Node min value: " + bst.min());
-console.log("Node max value: " + bst.max());
+console.log("Tree min value: " + bst.min());
+console.log("Tree max value: " + bst.max());
 
 console.log("Does tree contain 2?: " + bst.contains(2));
 console.log("Does tree contain 9?: " + bst.contains(9));
