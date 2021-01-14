@@ -102,6 +102,9 @@ const sortRapid = (array, low = 0, high = array.length -1) => {
 // general
 const openFileWithCatch = (error) => {
   if (error) {
+    console.log("FICHIER INTROUVABLE");
+    console.log("FICHIER INTROUVABLE");
+    console.log("");
     console.log(error);
     return;
   }
