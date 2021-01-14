@@ -205,7 +205,7 @@ console.log("Tree sort by in-order (left, root, right) : " + bst.dfsInOrder());
 console.log("Tree sort by pre-order (root, left, right) : " + bst.dfsPreOrder());
 console.log("Tree sort by post-order (left, right, root) : " + bst.dfsPostOrder());
 
-console.log(bst.bfs());
+console.log("Level by Level search : " + "["+bst.bfs()+"]"); //feelsbadtricking!
 
 
 
