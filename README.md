@@ -1,5 +1,5 @@
-# Projet THP-NEXT : WEEK 2 --- DAY 1
-# RECURSIVITE !
+# Projet THP-NEXT : WEEK 2 --- DAY 4-5
+# LES ZARBRES !
 
 By Nabil Simon
 
