@@ -1,4 +1,4 @@
-# Projet THP-NEXT : WEEK 3 --- DAY 1
+# Projet THP-NEXT : WEEK 3 --- DAY 04
 # Manipulations DOM !
 
 By Nabil Simon
@@ -14,4 +14,4 @@ Code with JS & HTML/CSS
 - open browser (console) & ENJOY !
 
 ## To do :
-- Missing : Something ?
+- Missing : Wouay you day Dimitri ? Poush Bi !

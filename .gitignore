@@ -1,3 +1,4 @@
 # Ignore old folder
 
 /old/*
+/apikey.js
