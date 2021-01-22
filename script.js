@@ -13,7 +13,7 @@ const exit = () => {
 }
 
 const readMore = (IdOfMovie) => {
-  const readUrl = `http://www.omdbapi.com/?i=${IdOfMovie}&apikey=63a43a65`;
+  const readUrl = `https://www.omdbapi.com/?i=${IdOfMovie}&apikey=63a43a65`;
   fetch(readUrl)
   .then(response => response.json())
   .then((data) => {
@@ -43,7 +43,7 @@ const readMore = (IdOfMovie) => {
 
 
 const searchMovie = (searchInput) => {
-  const apiUrl = `http://www.omdbapi.com/?s=${searchInput}&apikey=63a43a65`;
+  const apiUrl = `https://www.omdbapi.com/?s=${searchInput}&apikey=63a43a65`;
   fetch(apiUrl)
   .then(response => response.json())
   .then((data) => {
