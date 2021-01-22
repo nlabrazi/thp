@@ -13,15 +13,11 @@ const exit = () => {
 }
 
 const readMore = (IdOfMovie) => {
-  //console.log("Id Of Movie :")
-  //console.log(IdOfMovie);
   const readUrl = `http://www.omdbapi.com/?i=${IdOfMovie}&apikey=63a43a65`;
   fetch(readUrl)
   .then(response => response.json())
   .then((data) => {
-    //console.log(data);
     modalTest.innerHTML = "";
-    //console.log(modalTest);
     modalTest.innerHTML =
     `
     <div id="modal" class="modal" tabindex="-1" style="display:block;">
@@ -52,13 +48,10 @@ const searchMovie = (searchInput) => {
   .then(response => response.json())
   .then((data) => {
     results.innerHTML = "";
-    //console.log(data);
     if (data.Response == "False") {
       results.innerHTML += `<h4>AUCUN RESULTAT</h4>`
     } else {
       data.Search.forEach((movie) => {
-        //console.log("Movie :")
-        //console.log(movie.imdbID);
         results.innerHTML +=
         `<li>
           <div class="card-product">
@@ -75,9 +68,6 @@ const searchMovie = (searchInput) => {
         </li>`;
       });
       const cta = document.querySelectorAll(".btnReadMore").forEach(item => {
-        //console.log("Item :")
-        //console.log(item);
-        //console.log(item.dataset.id);
         item.addEventListener("click", () => { readMore(item.dataset.id); });
       });
 
