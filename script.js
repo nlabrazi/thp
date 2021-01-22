@@ -61,10 +61,17 @@ const searchMovie = (searchInput) => {
         //console.log(movie.imdbID);
         results.innerHTML +=
         `<li>
-        <img src="${movie.Poster}"/>
-        <p>Titre : ${movie.Title}</p>
-        <p>Sortie : ${movie.Year}</p>
-        <button data-id="${movie.imdbID}" class="btn btn-primary btnReadMore">read more</button>
+          <div class="card-product">
+            <img src="${movie.Poster}">
+              <div class="card-product-infos">
+                <h2>${movie.Title}</h2>
+                <p class="details" style="font-size:20px">Année de sortie : <strong>${movie.Year}</strong> au cinéma</p>
+              </div>
+              <div class="card-more">
+                <button data-id="${movie.imdbID}" class="btn btn-primary btnReadMore">read more</button>
+              </div>
+          </div>
+          <br>
         </li>`;
       });
       const cta = document.querySelectorAll(".btnReadMore").forEach(item => {
@@ -73,6 +80,28 @@ const searchMovie = (searchInput) => {
         console.log(item.dataset.id);
         item.addEventListener("click", () => { readMore(item.dataset.id); });
       });
+
+
+      // begin Observer
+      let observer = new IntersectionObserver(function (observable) {
+        observable.forEach(function (observable) {
+          if (observable.intersectionRatio > 0.5) {                //des que la card est visible (ratio > 0.5)
+            observable.target.classList.remove('not-visible');     //enlever la class not-visible et du coup change la class css
+            observer.unobserve(observable.target);                 //not working 😢😢😢😢😢
+            console.log("Card Visible");
+          }
+        })
+      }, {
+        threshold: [0.5]
+      })
+
+      let cardsMovie = document.querySelectorAll('.card-product')
+      cardsMovie.forEach(function (card) {
+        card.classList.add('not-visible')
+        observer.observe(card)
+      })
+      // end Observer
+
     };
   });
 };
@@ -85,5 +114,3 @@ formSearch.addEventListener("submit", (event) => {
   const searchInput = document.getElementById("searchValue").value;
   searchMovie(searchInput);
 });
-
-
