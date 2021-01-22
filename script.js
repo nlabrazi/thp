@@ -13,15 +13,15 @@ const exit = () => {
 }
 
 const readMore = (IdOfMovie) => {
-  console.log("Id Of Movie :")
-  console.log(IdOfMovie);
+  //console.log("Id Of Movie :")
+  //console.log(IdOfMovie);
   const readUrl = `http://www.omdbapi.com/?i=${IdOfMovie}&apikey=63a43a65`;
   fetch(readUrl)
   .then(response => response.json())
   .then((data) => {
-    console.log(data);
+    //console.log(data);
     modalTest.innerHTML = "";
-    console.log(modalTest);
+    //console.log(modalTest);
     modalTest.innerHTML =
     `
     <div id="modal" class="modal" tabindex="-1" style="display:block;">
@@ -77,7 +77,7 @@ const searchMovie = (searchInput) => {
       const cta = document.querySelectorAll(".btnReadMore").forEach(item => {
         //console.log("Item :")
         //console.log(item);
-        console.log(item.dataset.id);
+        //console.log(item.dataset.id);
         item.addEventListener("click", () => { readMore(item.dataset.id); });
       });
 
@@ -85,10 +85,10 @@ const searchMovie = (searchInput) => {
       // begin Observer
       let observer = new IntersectionObserver(function (observable) {
         observable.forEach(function (observable) {
+          console.log("Card Visible count");
           if (observable.intersectionRatio > 0.5) {                //des que la card est visible (ratio > 0.5)
             observable.target.classList.remove('not-visible');     //enlever la class not-visible et du coup change la class css
-            observer.unobserve(observable.target);                 //not working 😢😢😢😢😢
-            console.log("Card Visible");
+            observer.unobserve(observable.target);                 // not really working 😢😢😢😢😢
           }
         })
       }, {
