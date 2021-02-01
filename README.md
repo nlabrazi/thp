@@ -1,12 +1,15 @@
-# Projet THP-NEXT : WEEK 3 --- DAY 04
-# Manipulations DOM !
+![alt text](https://miro.medium.com/max/700/1*vHHBwcUFUaHWXntSnqKdCA.png)
+
+
+# Projet THP-NEXT : WEEK 5 --- DAY 01
+# Basics REACT !
 
 By Nabil Simon
 
 
 ## Description :
 Exercices de THP-NEXT
-Code with JS & HTML/CSS
+Code with JS (React)
 
 
 ## How to use :
