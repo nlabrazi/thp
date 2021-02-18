@@ -1,7 +1,7 @@
 ![alt text](https://miro.medium.com/max/700/1*vHHBwcUFUaHWXntSnqKdCA.png)
 
 
-# Projet THP-NEXT : WEEK 5 --- DAY 01
+# Projet THP-NEXT : All My Projects
 # Basics REACT !
 
 By Nabil Simon
